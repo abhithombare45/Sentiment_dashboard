@@ -1,0 +1,14 @@
+praw>=7.0
+pandas>=1.0
+numpy
+python-dotenv>=0.19
+streamlit>=1.0  # if using app.py for UI
+jupyter>=1.0    # if using notebooks
+praw 
+transformers 
+torch 
+matplotlib 
+seaborn 
+wordcloud 
+streamlit
+EOF
