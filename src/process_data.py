@@ -59,10 +59,18 @@ results = [
     topic_pipeline(title, candidate_labels=labels) for title in df["Title_Clean"]
 ]
 
+# [{'sequence': 'doge gains access to payroll for 276k federal staff despite security fears report',
+#   'labels': ['security', 'gadgets', 'AI', 'software', 'hardware'],
+#   'scores': [0.7345141768455505,
+#    0.11284095048904419,
+#    0.09272121638059616,
+#    0.0359639972448349,
+#    0.023959597572684288]},.....,{...}]
+
 # Add top topic and score to DataFrame
 df["Topic"] = [res["labels"][0] for res in results]
 df["Topic_Score"] = [res["scores"][0] for res in results]
 df
 
 # Save the processed DataFrame
-# df.to_csv('../processed_posts.csv', index=False)
+df.to_csv("../processed_posts.csv", index=False)
