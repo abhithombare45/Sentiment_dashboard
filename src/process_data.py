@@ -14,7 +14,7 @@ df.tail(5)
 
 def preprocess_text(text):
     text = re.sub(r"http\S+", "", text)  # Remove URLs
-    text = re.sub(r"[^a-zA-Z0-9\s]", "", text)  # Remove special characters
+    text = re.sub(r"[^a-zA-Z0-9\$\.\s]", "", text)  # Remove special characters
     return text.lower().strip()
 
 
@@ -40,9 +40,16 @@ sentiments = sentiment_pipeline(titles, batch_size=32)
 df["Sentiment"] = [res["label"] for res in sentiments]
 df["Sentiment_Score"] = [res["score"] for res in sentiments]
 
-df.head(4)
+# Map sentiment labels to human-readable values
+label_mapping = {
+    "LABEL_0": "NEGATIVE",
+    "LABEL_1": "NEUTRAL",
+    "LABEL_2": "POSITIVE"
+}
 
-df
+df["Sentiment"] = df["Sentiment"].map(label_mapping)
+
+df.head(4)
 
 # 4. Topic Classification
 
@@ -55,9 +62,18 @@ topic_pipeline = pipeline(
 labels = ["AI", "gadgets", "software", "hardware", "security"]
 
 # Classify each title
-results = [
-    topic_pipeline(title, candidate_labels=labels) for title in df["Title_Clean"]
-]
+# results = [
+#     topic_pipeline(title, candidate_labels=labels) for title in df["Title_Clean"]
+# ]
+
+''' Code with Memory Mgmt. '''
+results = []
+chunk_size = 100
+for i in range(0, len(df['Title_Clean']), chunk_size):
+    chunk = df['Title_Clean'][i:i + chunk_size].tolist()
+    results.extend(topic_pipeline(chunk, candidate_labels=labels))
+df['Topic'] = [res['labels'][0] for res in results]
+df['Topic_Score'] = [res['scores'][0] for res in results]
 
 # [{'sequence': 'doge gains access to payroll for 276k federal staff despite security fears report',
 #   'labels': ['security', 'gadgets', 'AI', 'software', 'hardware'],
@@ -70,7 +86,16 @@ results = [
 # Add top topic and score to DataFrame
 df["Topic"] = [res["labels"][0] for res in results]
 df["Topic_Score"] = [res["scores"][0] for res in results]
-df
 
-# Save the processed DataFrame
+df.head(4)
+
+    ''' data only with label as LABEL_0 '''
+    
+# df["Sentiment"] == "LABEL_0"
+# df[df['Sentiment'] == 'LABEL_0']
+
+
+
+    ''' Save the processed DataFrame '''
+
 df.to_csv("../processed_posts.csv", index=False)
