@@ -1,3 +1,4 @@
+streamlit==1.32.2
 appnope==0.1.4
 asttokens==3.0.0
 comm==0.2.2
@@ -31,4 +32,4 @@ tornado==6.4.2
 traitlets==5.14.3
 tzdata==2025.1
 wcwidth==0.2.13
-#wheel @ file:///opt/homebrew/Cellar/python%403.13/3.13.2/libexec/wheel-0.45.1-py3-none-any.whl#sha256=b9235939e2096903717cb6bfc132267f8a7e46deb2ec3ef9c5e234ea301795d0
+wheel @ file:///opt/homebrew/Cellar/python%403.13/3.13.2/libexec/wheel-0.45.1-py3-none-any.whl#sha256=b9235939e2096903717cb6bfc132267f8a7e46deb2ec3ef9c5e234ea301795d0
