@@ -68,20 +68,14 @@ labels = ["AI", "gadgets", "software", "hardware", "security"]
 
 ''' Code with Memory Mgmt. '''
 results = []
-chunk_size = 100
+chunk_size = 100    
 for i in range(0, len(df['Title_Clean']), chunk_size):
     chunk = df['Title_Clean'][i:i + chunk_size].tolist()
     results.extend(topic_pipeline(chunk, candidate_labels=labels))
 df['Topic'] = [res['labels'][0] for res in results]
 df['Topic_Score'] = [res['scores'][0] for res in results]
+# took 2 min 22 sec to run on 10000 rows
 
-# [{'sequence': 'doge gains access to payroll for 276k federal staff despite security fears report',
-#   'labels': ['security', 'gadgets', 'AI', 'software', 'hardware'],
-#   'scores': [0.7345141768455505,
-#    0.11284095048904419,
-#    0.09272121638059616,
-#    0.0359639972448349,
-#    0.023959597572684288]},.....,{...}]
 
 # Add top topic and score to DataFrame
 df["Topic"] = [res["labels"][0] for res in results]
