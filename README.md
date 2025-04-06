@@ -1,20 +1,72 @@
-# Sentiment Dashboard Project
+# 📊 Sentiment Dashboard Project
 
-## Overview
-A real-time social media sentiment analysis dashboard using Reddit data, built with Python and Streamlit. Uses `cardiffnlp/twitter-roberta-base-sentiment` for sentiment and `facebook/bart-large-mnli` for topic classification.
+![Streamlit](https://img.shields.io/badge/Made%20With-Streamlit-orange?style=for-the-badge&logo=streamlit)
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Setup
-- Clone this repo: `git clone [GitHub](https://github.com/abhithombare45/Sentiment_dashboard)`
-- Install dependencies: `pip install -r requirements.txt`
-- Run: `streamlit run dashboard.py`
+---
 
-## Features
-- Real-time sentiment analysis and topic classification
-- Interactive filters for sentiments and topics
-- Visualizations: pie charts, bar charts, word clouds, time trends
+## 🚀 Overview
+A sleek and interactive real-time **social media sentiment analysis dashboard** using Reddit data — powered by **Streamlit** and **Transformers**.
 
-## Dependencies
-See `requirements.txt` for details.
+🔍 **Sentiment Model:** `cardiffnlp/twitter-roberta-base-sentiment`  
+📚 **Topic Classifier:** `facebook/bart-large-mnli`
 
-## Author
-Abhijeet Thombare
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/abhithombare45/Sentiment_dashboard.git
+   cd Sentiment_dashboard
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the App**
+   ```bash
+   streamlit run dashboard.py
+   ```
+
+---
+
+## ✨ Features
+
+✅ Real-time sentiment analysis & topic classification  
+✅ Interactive dropdowns and filters  
+✅ Dynamic charts:
+- 📊 Pie charts
+- 📈 Time-series sentiment trends
+- 📌 Topic bar plots
+- ☁️ Word clouds  
+
+✅ Responsive dashboard layout  
+✅ Easy to deploy on [Streamlit Cloud](https://streamlit.io/cloud)
+
+---
+
+## 📦 Dependencies
+
+All required packages are listed in [`requirements.txt`](./requirements.txt).  
+Key packages include:
+- `streamlit`
+- `pandas`
+- `matplotlib`
+- `wordcloud`
+- `transformers`
+- `torch`
+
+---
+
+## 👨‍💻 Author
+
+**Abhijeet Thombare**  
+🔗 [GitHub](https://github.com/abhithombare45) | 🔗 [LinkedIn](https://www.linkedin.com/in/abhithombre45/)
+
+---
+
+> 📌 _Feel free to fork or star this repo if you found it useful!_
