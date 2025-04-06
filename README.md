@@ -9,8 +9,8 @@
 ## 🚀 Overview
 A sleek and interactive real-time **social media sentiment analysis dashboard** using Reddit data — powered by **Streamlit** and **Transformers**.
 
-🔍 **Sentiment Model:** `cardiffnlp/twitter-roberta-base-sentiment`  
-📚 **Topic Classifier:** `facebook/bart-large-mnli`
+🔍 **Sentiment Model:** **`cardiffnlp/twitter-roberta-base-sentiment`**  
+📚 **Topic Classifier:** **`facebook/bart-large-mnli`**
 
 ---
 
@@ -24,12 +24,12 @@ A sleek and interactive real-time **social media sentiment analysis dashboard** 
 
 2. **Install Dependencies**
    ```bash
-   pip install -r requirements.txt
+   💾 pip install -r requirements.txt
    ```
 
 3. **Run the App**
    ```bash
-   streamlit run dashboard.py
+   🚀 streamlit run dashboard.py
    ```
 
 ---
@@ -38,11 +38,11 @@ A sleek and interactive real-time **social media sentiment analysis dashboard** 
 
 ✅ Real-time sentiment analysis & topic classification  
 ✅ Interactive dropdowns and filters  
-✅ Dynamic charts:
-- 📊 Pie charts
-- 📈 Time-series sentiment trends
-- 📌 Topic bar plots
-- ☁️ Word clouds  
+✅ **Dynamic Charts**:
+- 📊 **Pie Charts**
+- 📈 **Time-Series Sentiment Trends**
+- 📌 **Topic Bar Plots**
+- ☁️ **Word Clouds**  
 
 ✅ Responsive dashboard layout  
 ✅ Easy to deploy on [Streamlit Cloud](https://streamlit.io/cloud)
@@ -52,13 +52,13 @@ A sleek and interactive real-time **social media sentiment analysis dashboard** 
 ## 📦 Dependencies
 
 All required packages are listed in [`requirements.txt`](./requirements.txt).  
-Key packages include:
-- `streamlit`
-- `pandas`
-- `matplotlib`
-- `wordcloud`
-- `transformers`
-- `torch`
+**Key packages include**:
+- **`streamlit`**
+- **`pandas`**
+- **`matplotlib`**
+- **`wordcloud`**
+- **`transformers`**
+- **`torch`**
 
 ---
 
