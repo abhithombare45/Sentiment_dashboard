@@ -76,7 +76,6 @@ df['Topic'] = [res['labels'][0] for res in results]
 df['Topic_Score'] = [res['scores'][0] for res in results]
 # took 2 min 22 sec to run on 10000 rows
 
-
 # Add top topic and score to DataFrame
 df["Topic"] = [res["labels"][0] for res in results]
 df["Topic_Score"] = [res["scores"][0] for res in results]
